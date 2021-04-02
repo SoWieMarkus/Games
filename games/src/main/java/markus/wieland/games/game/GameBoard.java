@@ -34,7 +34,8 @@ public abstract class GameBoard<C extends ViewGroup, E extends GameBoardField, S
         initializeFields();
     }
 
-    protected void initializeLines(){}
+    protected void initializeLines() {
+    }
 
     protected abstract void initializeFields();
 
@@ -55,12 +56,18 @@ public abstract class GameBoard<C extends ViewGroup, E extends GameBoardField, S
     }
 
     @IdRes
-    public int getIdByString(Context context, String id){
+    public int getIdByString(Context context, String id) {
         return context.getResources().getIdentifier(id, "id", context.getPackageName());
     }
 
     public final <V extends View> V findViewById(@IdRes int id) {
         return layout.findViewById(id);
     }
+
+
+    public final <V extends View> V findViewById(Context context, String id) {
+        return layout.findViewById(getIdByString(context, id));
+    }
+
 
 }
