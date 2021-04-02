@@ -1,6 +1,7 @@
 package markus.wieland.games.game;
 
 import android.content.Context;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.IdRes;
@@ -57,4 +58,9 @@ public abstract class GameBoard<C extends ViewGroup, E extends GameBoardField, S
     public int getIdByString(Context context, String id){
         return context.getResources().getIdentifier(id, "id", context.getPackageName());
     }
+
+    public final <V extends View> V findViewById(@IdRes int id) {
+        return layout.findViewById(id);
+    }
+
 }
