@@ -4,5 +4,5 @@ public interface GameEventListener {
 
     void onGameStart();
     void onGamePause();
-    void onGameFinish();
+    void onGameFinish(GameResult gameResult);
 }

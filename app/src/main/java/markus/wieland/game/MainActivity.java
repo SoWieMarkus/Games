@@ -1,4 +1,4 @@
-package markus.wieland.games;
+package markus.wieland.game;
 
 import androidx.appcompat.app.AppCompatActivity;
 
