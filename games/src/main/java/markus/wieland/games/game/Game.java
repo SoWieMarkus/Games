@@ -26,8 +26,9 @@ public abstract class Game<S extends GameState, R extends GameResult> {
         this.gameEventListener.onGamePause();
     }
 
-    public void finish() {
+    public void finish(R r) {
         isRunning = false;
+        this.gameEventListener.onGameFinish(r);
     }
 
     public abstract S getGameState();
