@@ -1,0 +1,7 @@
+
+X	java:S110"<This class has 9 parents which is greater than 5 authorized.(¨¾¾Ø8Ø€î¼‰/
+Y
+java:S19052"<Remove this unnecessary cast to "EndScreenInteractListener".(î§ÇŽ8±ÝõÃ‰/
+`
+java:S19051">Remove this unnecessary cast to "StartScreenInteractListener".(¢ÊÑþÿÿÿÿÿ8±ÝõÃ‰/
+e	java:S119"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(¨¾¾Ø8 èýÃ‰/

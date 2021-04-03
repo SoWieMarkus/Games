@@ -8,6 +8,7 @@ import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import markus.wieland.game.R;
 import markus.wieland.games.game.Game;
 import markus.wieland.games.game.GameConfiguration;
 import markus.wieland.games.game.GameEventListener;
@@ -39,8 +40,8 @@ public abstract class GameActivity<H extends Highscore, S extends GameState, GR 
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(layoutId);
 
         gameSaver = initializeGameSaver();
