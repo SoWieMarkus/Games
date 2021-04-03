@@ -1,10 +1,11 @@
 package markus.wieland.games.ai;
 
+import java.io.Serializable;
 import java.util.Random;
 
 import markus.wieland.games.game.Difficulty;
 
-public abstract class AIMove {
+public abstract class AIMove implements Serializable {
 
     protected final Difficulty difficulty;
     protected final int player;

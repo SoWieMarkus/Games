@@ -2,6 +2,7 @@ package markus.wieland.games.elements;
 
 import androidx.annotation.NonNull;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
  * <p>
  * Class to manage a list of {@link Coordinate}
  */
-public class Line implements Iterable<Coordinate> {
+public class Line implements Iterable<Coordinate>, Serializable {
 
     /**
      * List of {@link Coordinate}

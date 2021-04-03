@@ -6,6 +6,7 @@ import java.util.List;
 import markus.wieland.games.ai.AI;
 import markus.wieland.games.ai.AIMove;
 import markus.wieland.games.ai.AIMoveRater;
+import markus.wieland.games.elements.Line;
 import markus.wieland.games.game.Difficulty;
 import markus.wieland.games.persistence.GameState;
 
@@ -13,8 +14,16 @@ public abstract class GridGameAI extends AI {
 
     protected int[][] currentGameBoard;
 
+    protected final List<Line> lines;
+
     public GridGameAI(AIMoveRater aiMoveRater, int player, Difficulty difficulty) {
         super(aiMoveRater, player, difficulty);
+        this.lines = new ArrayList<>();
+    }
+
+    public GridGameAI(List<Line> lines, AIMoveRater aiMoveRater, int player, Difficulty difficulty) {
+        super(aiMoveRater, player, difficulty);
+        this.lines = lines;
     }
 
     protected abstract int[][] getCurrentGameState(GameState s);

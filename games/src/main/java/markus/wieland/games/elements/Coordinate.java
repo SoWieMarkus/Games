@@ -1,12 +1,14 @@
 package markus.wieland.games.elements;
 
+import java.io.Serializable;
+
 /**
  * Coordinates to address a {@link markus.wieland.games.game.GameBoardField} inside a {@link markus.wieland.games.game.GameBoard}
  *
  * @author Markus Wieland
  * @since 03.04.2021
  */
-public class Coordinate {
+public class Coordinate implements Serializable {
 
     /**
      * x-Coordinate
