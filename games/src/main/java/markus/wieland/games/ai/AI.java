@@ -6,6 +6,12 @@ import java.util.List;
 import markus.wieland.games.game.Difficulty;
 import markus.wieland.games.persistence.GameState;
 
+/**
+ * @author Markus Wieland
+ * @since 03.04.2021
+ *
+ * Logic to choose a move for a bot playing the {@link markus.wieland.games.game.Game}
+ */
 public abstract class AI implements Serializable {
 
     protected final Difficulty difficulty;
