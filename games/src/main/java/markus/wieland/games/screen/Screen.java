@@ -9,7 +9,7 @@ import markus.wieland.games.screen.interact_listener.ScreenInteractListener;
 
 public abstract class Screen {
 
-    protected final ViewGroup background;
+    protected final View background;
 
     protected ScreenInteractListener screenInteractListener;
 
