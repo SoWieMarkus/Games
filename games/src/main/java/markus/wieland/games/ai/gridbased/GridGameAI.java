@@ -5,27 +5,28 @@ import java.util.List;
 import java.util.Random;
 
 import markus.wieland.games.ai.AI;
+import markus.wieland.games.ai.AIMove;
 import markus.wieland.games.ai.AIMoveRater;
 import markus.wieland.games.game.Difficulty;
 import markus.wieland.games.persistence.GameState;
 
-public abstract class GridGameAI<S extends GameState, M extends GridGameAIMove> extends AI<S, M> {
+public abstract class GridGameAI extends AI {
 
     protected int[][] currentGameBoard;
 
-    public GridGameAI(AIMoveRater<M> aiMoveRater, int player, Random random, Difficulty difficulty) {
+    public GridGameAI(AIMoveRater aiMoveRater, int player, Random random, Difficulty difficulty) {
         super(aiMoveRater, player, random, difficulty);
     }
 
-    protected abstract int[][] getCurrentGameState(S s);
+    protected abstract int[][] getCurrentGameState(GameState s);
 
     @Override
-    protected List<M> getPossibleMoves(S s) {
+    protected List<AIMove> getPossibleMoves(GameState s) {
         int[][] currentGrid = getCurrentGameState(s);
-        List<M> moves = new ArrayList<>();
+        List<AIMove> moves = new ArrayList<>();
         for (int y = 0; y < currentGrid.length; y++) {
             for (int x = 0; x < currentGrid[y].length; x++) {
-                M m = buildMove(x, y, currentGrid);
+                AIMove m = buildMove(x, y, currentGrid);
                 if (m.isLegal())
                     moves.add(m);
             }
@@ -33,6 +34,6 @@ public abstract class GridGameAI<S extends GameState, M extends GridGameAIMove> 
         return moves;
     }
 
-    protected abstract M buildMove(int x, int y, int[][] grid);
+    protected abstract AIMove buildMove(int x, int y, int[][] grid);
 
 }

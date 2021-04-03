@@ -1,5 +1,5 @@
 package markus.wieland.games.persistence;
 
-public class GameState {
+public interface GameState {
 
 }
