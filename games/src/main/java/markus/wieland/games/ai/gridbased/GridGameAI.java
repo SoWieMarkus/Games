@@ -7,7 +7,6 @@ import java.util.Random;
 import markus.wieland.games.ai.AI;
 import markus.wieland.games.ai.AIMoveRater;
 import markus.wieland.games.game.Difficulty;
-import markus.wieland.games.game.GameBoardField;
 import markus.wieland.games.persistence.GameState;
 
 public abstract class GridGameAI<S extends GameState, M extends GridGameAIMove> extends AI<S, M> {
@@ -26,11 +25,9 @@ public abstract class GridGameAI<S extends GameState, M extends GridGameAIMove> 
         List<M> moves = new ArrayList<>();
         for (int y = 0; y < currentGrid.length; y++) {
             for (int x = 0; x < currentGrid[y].length; x++) {
-                if (currentGrid[y][x] == GameBoardField.FREE) {
-                    M m = buildMove(x,y,currentGrid);
-                    if (m.isLegal())
-                        moves.add(m);
-                }
+                M m = buildMove(x, y, currentGrid);
+                if (m.isLegal())
+                    moves.add(m);
             }
         }
         return moves;
