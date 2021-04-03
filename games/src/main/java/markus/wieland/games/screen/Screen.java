@@ -21,7 +21,7 @@ public abstract class Screen {
         this.screenInteractListener = screenInteractListener;
     }
 
-    public ViewGroup getBackground() {
+    public View getBackground() {
         return background;
     }
 
