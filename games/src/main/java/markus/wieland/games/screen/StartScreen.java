@@ -5,17 +5,12 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 
 import markus.wieland.games.game.GameConfiguration;
+import markus.wieland.games.screen.interact_listener.StartScreenInteractListener;
 
 public abstract class StartScreen extends Screen {
 
-    protected ScreenInteractListener screenInteractListener;
-
     public StartScreen(@NonNull ViewGroup background) {
         super(background);
-    }
-
-    public void setScreenInteractListener(ScreenInteractListener screenInteractListener) {
-        this.screenInteractListener = screenInteractListener;
     }
 
     protected abstract GameConfiguration getConfiguration();
@@ -23,6 +18,6 @@ public abstract class StartScreen extends Screen {
     @Override
     public void close(){
         super.close();
-        screenInteractListener.onClose(getConfiguration());
+        ((StartScreenInteractListener)screenInteractListener).onClose(getConfiguration());
     }
 }

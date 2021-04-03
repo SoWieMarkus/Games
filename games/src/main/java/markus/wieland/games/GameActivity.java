@@ -17,7 +17,9 @@ import markus.wieland.games.persistence.GameGenerator;
 import markus.wieland.games.persistence.GameSaver;
 import markus.wieland.games.persistence.GameState;
 import markus.wieland.games.screen.EndScreen;
+import markus.wieland.games.screen.interact_listener.EndScreenInteractListener;
 import markus.wieland.games.screen.StartScreen;
+import markus.wieland.games.screen.interact_listener.StartScreenInteractListener;
 
 public abstract class GameActivity<H extends Highscore, S extends GameState, GR extends GameResult, G extends Game<S, GR>> extends AppCompatActivity implements GameEventListener<GR> {
 
@@ -44,7 +46,8 @@ public abstract class GameActivity<H extends Highscore, S extends GameState, GR 
         gameSaver = initializeGameSaver();
         startScreen = initializeStartScreen();
         endScreen = initializeEndScreen();
-        startScreen.setScreenInteractListener(this::load);
+        startScreen.setScreenInteractListener((StartScreenInteractListener) this::load);
+        endScreen.setScreenInteractListener((EndScreenInteractListener) this::restartGame);
 
         if (gameSaver != null) {
             loadGameStateFromGameSaver();
@@ -61,8 +64,13 @@ public abstract class GameActivity<H extends Highscore, S extends GameState, GR 
 
     protected void load(GameConfiguration configuration) {
         generator = initializeGenerator(configuration);
+        if (generator == null) return;
         S s = generator.generate();
         initializeGame(s);
+    }
+
+    protected void restartGame() {
+        recreate();
     }
 
     private void loadGameStateFromGameSaver() {

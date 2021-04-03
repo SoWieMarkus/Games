@@ -5,12 +5,20 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 
+import markus.wieland.games.screen.interact_listener.ScreenInteractListener;
+
 public abstract class Screen {
 
     protected final ViewGroup background;
 
+    protected ScreenInteractListener screenInteractListener;
+
     public Screen(@NonNull ViewGroup background) {
         this.background = background;
+    }
+
+    public void setScreenInteractListener(ScreenInteractListener screenInteractListener) {
+        this.screenInteractListener = screenInteractListener;
     }
 
     public ViewGroup getBackground() {

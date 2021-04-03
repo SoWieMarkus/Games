@@ -1,7 +1,7 @@
-package markus.wieland.games.screen;
+package markus.wieland.games.screen.interact_listener;
 
 import markus.wieland.games.game.GameConfiguration;
 
 public interface ScreenInteractListener {
-    void onClose(GameConfiguration configuration);
+
 }
