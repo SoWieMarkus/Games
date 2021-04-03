@@ -14,9 +14,9 @@ public abstract class AI implements Serializable {
     protected final int player;
     protected final AIMoveRater aiMoveRater;
 
-    public AI(AIMoveRater aiMoveRater, int player, Random random, Difficulty difficulty) {
+    public AI(AIMoveRater aiMoveRater, int player, Difficulty difficulty) {
         this.player = player;
-        this.random = random;
+        this.random = new Random();
         this.difficulty = difficulty;
         this.aiMoveRater = aiMoveRater;
     }

@@ -63,7 +63,7 @@ public class Matrix<E> implements Iterable<E> {
             @Override
             public E next() {
                 E e = get(currentX, currentY);
-                if (currentX == 8) {
+                if (currentX == sizeX) {
                     currentX = 0;
                     currentY++;
                 } else {

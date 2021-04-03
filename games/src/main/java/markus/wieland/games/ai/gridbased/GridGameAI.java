@@ -14,8 +14,8 @@ public abstract class GridGameAI extends AI {
 
     protected int[][] currentGameBoard;
 
-    public GridGameAI(AIMoveRater aiMoveRater, int player, Random random, Difficulty difficulty) {
-        super(aiMoveRater, player, random, difficulty);
+    public GridGameAI(AIMoveRater aiMoveRater, int player, Difficulty difficulty) {
+        super(aiMoveRater, player, difficulty);
     }
 
     protected abstract int[][] getCurrentGameState(GameState s);
