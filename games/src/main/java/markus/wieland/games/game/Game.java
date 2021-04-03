@@ -33,6 +33,8 @@ public abstract class Game<S extends GameState, R extends GameResult> {
 
     public abstract S getGameState();
 
+    public abstract R getResult();
+
     public boolean isRunning() {
         return isRunning;
     }

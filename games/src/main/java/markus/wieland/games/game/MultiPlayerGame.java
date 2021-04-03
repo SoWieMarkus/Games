@@ -7,7 +7,7 @@ import markus.wieland.games.player.PlayerManager;
 
 public abstract class MultiPlayerGame<S extends GameState, R extends GameResult> extends Game<S, R> {
 
-    protected final PlayerManager playerManager;
+    protected PlayerManager playerManager;
 
     public MultiPlayerGame(GameEventListener<R> gameEventListener) {
         super(gameEventListener);

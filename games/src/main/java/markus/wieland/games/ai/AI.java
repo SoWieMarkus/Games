@@ -1,12 +1,13 @@
 package markus.wieland.games.ai;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Random;
 
 import markus.wieland.games.game.Difficulty;
 import markus.wieland.games.persistence.GameState;
 
-public abstract class AI {
+public abstract class AI implements Serializable {
 
     protected final Difficulty difficulty;
     protected final Random random;

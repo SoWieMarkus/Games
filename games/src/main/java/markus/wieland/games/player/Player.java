@@ -18,13 +18,24 @@ public class Player implements Serializable {
         this.playerName = playerName;
     }
 
-    public AIMove move(GameState gameState){
+    public AIMove move(GameState gameState) {
         if (computer == null) throw new IllegalStateException("This player doesn't have an AI.");
         return computer.calculateMove(gameState);
     }
 
-    public boolean hasAI(){
+    public boolean hasAI() {
         return computer != null;
     }
 
+    public AI getComputer() {
+        return computer;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public String getPlayerName() {
+        return playerName;
+    }
 }
