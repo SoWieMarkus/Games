@@ -2,7 +2,6 @@ package markus.wieland.games.ai.gridbased;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import markus.wieland.games.ai.AI;
 import markus.wieland.games.ai.AIMove;

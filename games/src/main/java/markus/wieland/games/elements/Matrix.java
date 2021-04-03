@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class Matrix<E> implements Iterable<E> {
 
@@ -62,14 +63,19 @@ public class Matrix<E> implements Iterable<E> {
 
             @Override
             public E next() {
-                E e = get(currentX, currentY);
-                if (currentX == sizeX - 1) {
-                    currentX = 0;
-                    currentY++;
-                } else {
-                    currentX++;
+                try {
+                    E e = get(currentX, currentY);
+                    if (currentX == sizeX - 1) {
+                        currentX = 0;
+                        currentY++;
+                    } else {
+                        currentX++;
+                    }
+                    return e;
+                } catch (Exception e) {
+                    throw new NoSuchElementException();
                 }
-                return e;
+
             }
         };
     }

@@ -2,7 +2,6 @@ package markus.wieland.games.ai;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.Random;
 
 import markus.wieland.games.game.Difficulty;
 import markus.wieland.games.persistence.GameState;
@@ -10,13 +9,11 @@ import markus.wieland.games.persistence.GameState;
 public abstract class AI implements Serializable {
 
     protected final Difficulty difficulty;
-    protected final Random random;
     protected final int player;
     protected final AIMoveRater aiMoveRater;
 
     public AI(AIMoveRater aiMoveRater, int player, Difficulty difficulty) {
         this.player = player;
-        this.random = new Random();
         this.difficulty = difficulty;
         this.aiMoveRater = aiMoveRater;
     }
