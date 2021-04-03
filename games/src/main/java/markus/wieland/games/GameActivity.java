@@ -49,7 +49,7 @@ public abstract class GameActivity<H extends Highscore, S extends GameState, GR 
         endScreen = initializeEndScreen();
         startScreen.setScreenInteractListener((StartScreenInteractListener) this::load);
         endScreen.setScreenInteractListener((EndScreenInteractListener) this::restartGame);
-        endScreen.close();
+        endScreen.setVisibility(View.GONE);
 
         if (gameSaver != null) {
             loadGameStateFromGameSaver();
