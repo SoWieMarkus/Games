@@ -1,4 +1,4 @@
-package markus.wieland.games.game;
+package markus.wieland.games.player;
 
 import java.io.Serializable;
 
@@ -6,7 +6,7 @@ import markus.wieland.games.ai.AI;
 import markus.wieland.games.ai.AIMove;
 import markus.wieland.games.persistence.GameState;
 
-public abstract class Player implements Serializable {
+public class Player implements Serializable {
 
     protected final AI computer;
     protected final int value;
@@ -26,7 +26,5 @@ public abstract class Player implements Serializable {
     public boolean hasAI(){
         return computer != null;
     }
-
-
 
 }

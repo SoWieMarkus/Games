@@ -1,9 +1,10 @@
-package markus.wieland.games.game;
+package markus.wieland.games.player;
 
 import androidx.annotation.NonNull;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -24,6 +25,10 @@ public class PlayerManager implements Iterable<Player>, Serializable {
 
     public void register(Player player) {
         this.players.add(player);
+    }
+
+    public void shuffleOrder() {
+        Collections.shuffle(players);
     }
 
     public void setCurrentPlayer(int index) {

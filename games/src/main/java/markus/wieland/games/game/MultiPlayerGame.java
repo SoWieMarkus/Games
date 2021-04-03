@@ -2,6 +2,8 @@ package markus.wieland.games.game;
 
 import markus.wieland.games.ai.AIMove;
 import markus.wieland.games.persistence.GameState;
+import markus.wieland.games.player.Player;
+import markus.wieland.games.player.PlayerManager;
 
 public abstract class MultiPlayerGame<S extends GameState, R extends GameResult> extends Game<S, R> {
 
