@@ -73,3 +73,9 @@ p
 @games/src/main/java/markus/wieland/games/screen/StartScreen.java,4\3\4323c0544e9977abdc8d3ccb5cce6c551a0d3833
 j
 :games/src/main/java/markus/wieland/games/GameActivity.java,3\f\3f65c496dfadc7c73748d5c0af8a9ad47ea5ee2d
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+l
+<games/src/test/java/markus/wieland/game/ExampleUnitTest.java,e\8\e82e812a9a266dcc50c19bfef90d6c3a28f88719
+t
+Dgames/src/main/java/markus/wieland/games/screen/view/ScreenView.java,1\3\1343c3c00cf63f9675402dab35a7112722c8bf31
