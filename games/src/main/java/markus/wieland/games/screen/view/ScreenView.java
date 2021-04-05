@@ -71,7 +71,6 @@ public abstract class ScreenView extends FrameLayout {
 
     protected abstract void onBuild();
 
-    //TODO make this variable by attributes
     public void show(){
         setAlpha(animateStartAlpha);
         setVisibility(VISIBLE);
