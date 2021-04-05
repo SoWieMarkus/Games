@@ -1,4 +1,6 @@
 package markus.wieland.games.game;
 
-public interface GameConfiguration {
+import java.io.Serializable;
+
+public interface GameConfiguration extends Serializable {
 }

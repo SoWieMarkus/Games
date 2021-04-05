@@ -1,5 +1,6 @@
 package markus.wieland.games;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -19,7 +20,9 @@ import markus.wieland.games.screen.interact_listener.StartScreenInteractListener
 import markus.wieland.games.screen.view.EndScreenView;
 import markus.wieland.games.screen.view.StartScreenView;
 
-public abstract class GameActivity<H extends Highscore, S extends GameState, GR extends GameResult, G extends Game<S, GR>> extends AppCompatActivity implements GameEventListener<GR> {
+public abstract class GameActivity<C extends GameConfiguration, H extends Highscore, S extends GameState, GR extends GameResult, G extends Game<S, GR>> extends AppCompatActivity implements GameEventListener<GR> {
+
+    protected static final String KEY_CONFIGURATION = "markus.wieland.games.CONFIGURATION";
 
     protected GameSaver<S, H> gameSaver;
     protected GameGenerator<S> generator;
@@ -50,6 +53,12 @@ public abstract class GameActivity<H extends Highscore, S extends GameState, GR 
         if (endScreen != null) {
             endScreen.setScreenInteractListener((EndScreenInteractListener) this::restartGame);
             endScreen.setVisibility(View.GONE);
+        }
+
+        C configuration = (C) getIntent().getSerializableExtra(KEY_CONFIGURATION);
+        if (configuration != null) {
+            load(configuration);
+            return;
         }
 
         if (gameSaver != null) {
@@ -105,4 +114,13 @@ public abstract class GameActivity<H extends Highscore, S extends GameState, GR 
     protected abstract GameSaver<S, H> initializeGameSaver();
 
     protected abstract void initializeGame(S s);
+
+    protected <T> void restartActivity(boolean withConfiguration, Class<T> activity) {
+        Intent intent = new Intent(this, activity);
+        if (withConfiguration && generator != null && generator.getConfiguration() != null) {
+            intent.putExtra(KEY_CONFIGURATION, generator.getConfiguration());
+        }
+        startActivity(intent);
+        finish();
+    }
 }
