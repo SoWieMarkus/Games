@@ -1,4 +1,4 @@
-package markus.wieland.game;
+package markus.wieland.games;
 
 import android.content.Context;
 

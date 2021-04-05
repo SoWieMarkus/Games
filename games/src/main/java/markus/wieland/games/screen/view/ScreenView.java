@@ -10,7 +10,7 @@ import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import markus.wieland.game.R;
+import markus.wieland.games.R;
 import markus.wieland.games.screen.interact_listener.ScreenInteractListener;
 
 public abstract class ScreenView extends FrameLayout {

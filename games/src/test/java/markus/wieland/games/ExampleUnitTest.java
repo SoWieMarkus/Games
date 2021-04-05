@@ -1,4 +1,4 @@
-package markus.wieland.game;
+package markus.wieland.games;
 
 import org.junit.Test;
 
