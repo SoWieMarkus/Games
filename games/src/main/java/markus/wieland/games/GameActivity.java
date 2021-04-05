@@ -15,8 +15,6 @@ import markus.wieland.games.game.Highscore;
 import markus.wieland.games.persistence.GameGenerator;
 import markus.wieland.games.persistence.GameSaver;
 import markus.wieland.games.persistence.GameState;
-import markus.wieland.games.screen.interact_listener.EndScreenInteractListener;
-import markus.wieland.games.screen.interact_listener.StartScreenInteractListener;
 import markus.wieland.games.screen.view.EndScreenView;
 import markus.wieland.games.screen.view.StartScreenView;
 
@@ -49,19 +47,20 @@ public abstract class GameActivity<C extends GameConfiguration, H extends Highsc
         endScreen = initializeEndScreen();
 
         if (startScreen != null)
-            startScreen.setScreenInteractListener((StartScreenInteractListener) this::load);
+            startScreen.setScreenInteractListener(this::load);
         if (endScreen != null) {
-            endScreen.setScreenInteractListener((EndScreenInteractListener) this::restartGame);
+            endScreen.setScreenInteractListener(this::restartGame);
             endScreen.setVisibility(View.GONE);
         }
 
         C configuration = (C) getIntent().getSerializableExtra(KEY_CONFIGURATION);
         if (configuration != null) {
             load(configuration);
+            if (startScreen != null) startScreen.setVisibility(View.GONE);
             return;
         }
 
-        if (gameSaver != null) {
+        if (gameSaver != null && gameSaver.getGameState() != null) {
             loadGameStateFromGameSaver();
             if (startScreen != null) startScreen.setVisibility(View.GONE);
             return;
