@@ -90,6 +90,16 @@ public abstract class GameActivity<H extends Highscore, S extends GameState, GR 
         endScreen.show();
     }
 
+    @Override
+    public void onGameStart() {
+
+    }
+
+    @Override
+    public void onGamePause() {
+
+    }
+
     protected abstract GameGenerator<S> initializeGenerator(GameConfiguration configuration);
 
     protected abstract GameSaver<S, H> initializeGameSaver();

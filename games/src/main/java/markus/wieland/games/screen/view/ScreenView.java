@@ -20,6 +20,11 @@ public abstract class ScreenView extends FrameLayout {
     @LayoutRes
     protected int layoutId;
 
+    protected int animationStartOffset;
+    protected int animationDuration;
+    protected float animateStartAlpha;
+    protected float animateEndAlpha;
+
     public ScreenView(@NonNull Context context) {
         this(context, null);
     }
@@ -45,6 +50,20 @@ public abstract class ScreenView extends FrameLayout {
             throw new IllegalArgumentException("This screen has no layout. Assign one by adding \"app:layout_background='@layout/<>' to your view inside your layout file.");
 
         LayoutInflater.from(context).inflate(layoutId, this, true);
+
+
+        animateEndAlpha = array.getFloat(R.styleable.ScreenView_entry_animation_alpha_end,1f);
+        animateStartAlpha = array.getFloat(R.styleable.ScreenView_entry_animation_alpha_start,0f);
+        animationDuration = array.getInteger(R.styleable.ScreenView_entry_animation_alpha_duration,500);
+        animationStartOffset = array.getInteger(R.styleable.ScreenView_entry_animation_alpha_offset,0);
+
+        if (animationDuration < 0) throw new IllegalArgumentException("Animation duration can't be less than 0");
+        if (animationStartOffset < 0) throw new IllegalArgumentException("Animation start delay can't be less than 0");
+        if (animateEndAlpha < 0f || animateEndAlpha > 1f) throw new IllegalArgumentException("Animation end alpha must be a float value between 0 and 1.");
+        if (animateStartAlpha < 0f || animateStartAlpha > 1f) throw new IllegalArgumentException("Animation start alpha must be a float value between 0 and 1.");
+
+        setAlpha(animateStartAlpha);
+
         onBuild();
 
         array.recycle();
@@ -54,9 +73,9 @@ public abstract class ScreenView extends FrameLayout {
 
     //TODO make this variable by attributes
     public void show(){
-        setAlpha(0);
+        setAlpha(animateStartAlpha);
         setVisibility(VISIBLE);
-        animate().alpha(1f).setStartDelay(100).setDuration(500);
+        animate().alpha(animateEndAlpha).setStartDelay(animationStartOffset).setDuration(animationDuration);
         onShow();
     }
 
@@ -67,11 +86,5 @@ public abstract class ScreenView extends FrameLayout {
 
     protected abstract void onShow();
     protected abstract void onClose();
-
-
-
-
-
-
 
 }

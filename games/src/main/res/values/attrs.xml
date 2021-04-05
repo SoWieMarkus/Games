@@ -3,6 +3,10 @@
 
     <declare-styleable name="ScreenView">
         <attr name="layout_background" format="reference" />
+        <attr name="entry_animation_alpha_start" format="float" />
+        <attr name="entry_animation_alpha_end" format="float" />
+        <attr name="entry_animation_alpha_duration" format="integer" />
+        <attr name="entry_animation_alpha_offset" format="integer" />
     </declare-styleable>
 
 </resources>
