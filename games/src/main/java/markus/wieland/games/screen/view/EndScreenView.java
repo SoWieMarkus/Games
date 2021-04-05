@@ -37,6 +37,11 @@ public abstract class EndScreenView extends ScreenView {
     protected abstract void onNewGameResult();
 
     @Override
+    protected void onShow() {
+
+    }
+
+    @Override
     protected void onClose() {
         ((EndScreenInteractListener) screenInteractListener).onClose();
     }

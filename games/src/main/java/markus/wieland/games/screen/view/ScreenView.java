@@ -56,7 +56,7 @@ public abstract class ScreenView extends FrameLayout {
     public void show(){
         setAlpha(0);
         setVisibility(VISIBLE);
-        animate().alpha(0f).setStartDelay(100).setDuration(500);
+        animate().alpha(1f).setStartDelay(100).setDuration(500);
         onShow();
     }
 
