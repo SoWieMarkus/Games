@@ -49,9 +49,17 @@ public class GameSaver<S extends GameState, H extends Highscore> {
         storeString(valueState, "");
     }
 
-    public void save(S s, H h) {
-        storeString(valueState, gson.toJson(s));
-        storeString(valueHighscore, gson.toJson(h));
+    public void save(H h) {
+        storeString(valueHighscore, h == null ? "" : gson.toJson(h));
+    }
+
+    public void save(H h, S s) {
+        save(h);
+        save(s);
+    }
+
+    public void save(S s) {
+        storeString(valueState, s == null ? "" : gson.toJson(s));
     }
 
     private void storeString(String key, String string) {

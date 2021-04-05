@@ -18,13 +18,11 @@ public abstract class MultiPlayerGame<S extends GameState, R extends GameResult>
         this.playerManager.register(player);
     }
 
-    public void nextPlayer(){
+    public void nextPlayer() {
         Player player = playerManager.next();
         if (player.hasAI())
             performAIMove(player.move(getGameState()));
     }
 
     protected abstract void performAIMove(AIMove aiMove);
-
-
 }
