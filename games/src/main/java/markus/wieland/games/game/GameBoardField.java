@@ -2,6 +2,7 @@ package markus.wieland.games.game;
 
 import android.view.View;
 
+import markus.wieland.games.game.view.GameStateField;
 import markus.wieland.games.player.Player;
 
 /**
@@ -31,6 +32,8 @@ public abstract class GameBoardField {
         this.view = view;
         this.value = FREE;
     }
+
+    public abstract void apply(GameStateField field);
 
     /**
      * Check if the field is empty which means is {@link #value} equal to {@link #FREE}

@@ -15,6 +15,12 @@ import markus.wieland.games.persistence.GameState;
 import markus.wieland.games.elements.Line;
 import markus.wieland.games.elements.Matrix;
 
+/**
+ * @deprecated
+ * @param <C>
+ * @param <E>
+ * @param <S>
+ */
 public abstract class GameBoard<C extends ViewGroup, E extends GameBoardField, S extends GameState> implements Iterable<E> {
 
     protected final GameBoardInteractionListener<E> gameBoardInteractionListener;
@@ -34,8 +40,7 @@ public abstract class GameBoard<C extends ViewGroup, E extends GameBoardField, S
         initializeFields();
     }
 
-    protected void initializeLines() {
-    }
+    protected void initializeLines() {}
 
     protected abstract void initializeFields();
 

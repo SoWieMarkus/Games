@@ -44,10 +44,17 @@ public class Matrix<E> implements Iterable<E> {
         return matrixObject.get(y).get(x);
     }
 
+    public int getSizeX() {
+        return sizeX;
+    }
+
+    public int getSizeY() {
+        return sizeY;
+    }
+
     public E get(Coordinate coordinate) {
         return get(coordinate.getX(), coordinate.getY());
     }
-
 
     @NonNull
     @Override

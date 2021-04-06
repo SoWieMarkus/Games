@@ -75,7 +75,11 @@ j
 :games/src/main/java/markus/wieland/games/GameActivity.java,3\f\3f65c496dfadc7c73748d5c0af8a9ad47ea5ee2d
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-l
-<games/src/test/java/markus/wieland/game/ExampleUnitTest.java,e\8\e82e812a9a266dcc50c19bfef90d6c3a28f88719
 t
 Dgames/src/main/java/markus/wieland/games/screen/view/ScreenView.java,1\3\1343c3c00cf63f9675402dab35a7112722c8bf31
+m
+=games/src/test/java/markus/wieland/games/ExampleUnitTest.java,c\c\cc98de50233a66e7b329e80a59a96d9c26cbb977
+R
+"games/src/main/AndroidManifest.xml,4\a\4a4b54dbf9345a5305d53b961e71a5959f41f49d
+x
+Hgames/src/main/java/markus/wieland/games/persistence/GameStateField.java,d\2\d2c504aaac4499e2380de536738bfee7079d1457
