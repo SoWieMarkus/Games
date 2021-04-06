@@ -7,21 +7,21 @@ import java.util.Iterator;
 import markus.wieland.games.elements.SerializableMatrix;
 import markus.wieland.games.persistence.GameState;
 
-public class GridGameState implements GameState, Iterable<GridGameStateField> {
+public abstract class GridGameState<F extends GridGameStateField> implements GameState, Iterable<F> {
 
-    protected final SerializableMatrix<GridGameStateField> matrix;
+    protected final SerializableMatrix<F> matrix;
 
-    public GridGameState(SerializableMatrix<GridGameStateField> matrix) {
+    public GridGameState(SerializableMatrix<F> matrix) {
         this.matrix = matrix;
     }
 
-    public SerializableMatrix<GridGameStateField> getMatrix() {
+    public SerializableMatrix<F> getMatrix() {
         return matrix;
     }
 
     @NonNull
     @Override
-    public Iterator<GridGameStateField> iterator() {
+    public Iterator<F> iterator() {
         return matrix.iterator();
     }
 }

@@ -30,17 +30,6 @@ public abstract class GridGameBoardView<F extends GridGameBoardFieldView> extend
 
     protected void initializeLines() {}
 
-    @Override
-    protected void loadGameState(GameState gameState) {
-        if (!(gameState instanceof GridGameState))
-            throw new IllegalArgumentException("You can't use " + gameState.getClass()
-                    + " inside a grid based game board view. Override to method to get rid of this error message.");
-        GridGameState gridGameState = (GridGameState) gameState;
-        for (GridGameStateField gameStateField : gridGameState) {
-            matrix.get(gameStateField.getCoordinate()).load(gameStateField);
-        }
-    }
-
     protected abstract int getSizeX();
 
     protected abstract int getSizeY();

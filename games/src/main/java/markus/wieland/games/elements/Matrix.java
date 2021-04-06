@@ -32,6 +32,10 @@ public class Matrix<E> implements Iterable<E> {
         this.matrixObject.get(y).set(x, e);
     }
 
+    public void set(Coordinate coordinate, E e) {
+        set(coordinate.getX(), coordinate.getY(), e);
+    }
+
     private void check(int x, int y) {
         if (x >= sizeX || y >= sizeY)
             throw new IllegalArgumentException(
