@@ -12,7 +12,7 @@ import markus.wieland.games.persistence.GameState;
 
 public abstract class GridGameBoardView<F extends GridGameBoardFieldView> extends GameBoardView {
 
-    protected final Matrix<F> matrix;
+    protected Matrix<F> matrix;
 
     public GridGameBoardView(@NonNull Context context) {
         this(context, null);
@@ -24,6 +24,10 @@ public abstract class GridGameBoardView<F extends GridGameBoardFieldView> extend
 
     public GridGameBoardView(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        load();
+    }
+
+    protected void load(){
         matrix = new Matrix<>(getSizeX(), getSizeY());
         initializeLines();
     }
