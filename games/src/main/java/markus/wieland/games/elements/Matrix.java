@@ -56,6 +56,15 @@ public class Matrix<E> implements Iterable<E> {
         return get(coordinate.getX(), coordinate.getY());
     }
 
+    public E get(int i) {
+        int j = 0;
+        for (E e : this) {
+            if (i == j) return e;
+            j++;
+        }
+        return null;
+    }
+
     @NonNull
     @Override
     public Iterator<E> iterator() {

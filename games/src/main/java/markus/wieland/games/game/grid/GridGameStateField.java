@@ -3,8 +3,16 @@ package markus.wieland.games.game.grid;
 import markus.wieland.games.elements.Coordinate;
 import markus.wieland.games.game.view.GameStateField;
 
-public interface GridGameStateField extends GameStateField {
+public abstract class GridGameStateField implements GameStateField {
 
-    Coordinate getCoordinate();
+    protected final Coordinate coordinate;
+
+    public GridGameStateField(Coordinate coordinate) {
+        this.coordinate = coordinate;
+    }
+
+    public Coordinate getCoordinate() {
+        return coordinate;
+    }
 
 }

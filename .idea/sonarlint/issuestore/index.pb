@@ -97,3 +97,5 @@ Jgames/src/main/java/markus/wieland/games/game/grid/GridGameStateField.java,b\9
 Ngames/src/main/java/markus/wieland/games/game/grid/GridGameBoardFieldView.java,e\0\e014ce7cd7052f8da59bf7c7f3dc7d20513793cd
 u
 Egames/src/main/java/markus/wieland/games/game/view/GameBoardView.java,0\e\0e4d5533aa380ad5c823f9ec3e8248b0ed40cbe8
+y
+Igames/src/main/java/markus/wieland/games/screen/view/StartScreenView.java,a\f\afcadb10ca079ec91509f6b10833b0a06bbe10b2
