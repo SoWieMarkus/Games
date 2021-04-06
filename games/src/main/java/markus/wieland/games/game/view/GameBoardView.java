@@ -10,7 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import markus.wieland.games.R;
-import markus.wieland.games.game.GameBoardInteractionListener;
 import markus.wieland.games.game.GameResult;
 import markus.wieland.games.persistence.GameState;
 

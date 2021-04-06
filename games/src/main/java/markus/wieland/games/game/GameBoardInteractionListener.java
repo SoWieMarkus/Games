@@ -1,5 +1,4 @@
 package markus.wieland.games.game;
 
-public interface GameBoardInteractionListener {
-
+public interface GameBoardInteractionListener<E extends GameBoardField> {
 }

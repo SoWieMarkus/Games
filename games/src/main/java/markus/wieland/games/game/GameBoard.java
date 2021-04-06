@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import markus.wieland.games.game.view.GameBoardInteractionListener;
 import markus.wieland.games.persistence.GameState;
 import markus.wieland.games.elements.Line;
 import markus.wieland.games.elements.Matrix;
@@ -23,12 +24,12 @@ import markus.wieland.games.elements.Matrix;
  */
 public abstract class GameBoard<C extends ViewGroup, E extends GameBoardField, S extends GameState> implements Iterable<E> {
 
-    protected final GameBoardInteractionListener<E> gameBoardInteractionListener;
+    protected final markus.wieland.games.game.GameBoardInteractionListener<E> gameBoardInteractionListener;
     protected final Matrix<E> matrix;
     protected final List<Line> lines;
     protected final C layout;
 
-    public GameBoard(int sizeX, int sizeY, C c, GameBoardInteractionListener<E> gameBoardInteractionListener) {
+    public GameBoard(int sizeX, int sizeY, C c, markus.wieland.games.game.GameBoardInteractionListener<E> gameBoardInteractionListener) {
         this.layout = c;
         if (sizeX < 1) throw new IllegalArgumentException("sizeX must be bigger or equal to 1.");
         if (sizeY < 1) throw new IllegalArgumentException("sizeY must be bigger or equal to 1.");
