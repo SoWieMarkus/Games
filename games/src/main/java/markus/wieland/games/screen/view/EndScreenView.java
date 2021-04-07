@@ -41,6 +41,10 @@ public abstract class EndScreenView extends ScreenView {
 
     }
 
+    protected void onClose(){
+
+    }
+
     @Override
     protected void onClose(boolean withConfiguration) {
         ((EndScreenInteractListener) screenInteractListener).onClose(withConfiguration);
