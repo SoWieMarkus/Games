@@ -37,4 +37,7 @@ public abstract class StartScreenView extends ScreenView {
     protected void onClose() {
         ((StartScreenInteractListener) screenInteractListener).onClose(getConfiguration());
     }
+
+    @Override
+    protected void onClose(boolean withConfiguration) {}
 }

@@ -83,7 +83,13 @@ public abstract class ScreenView extends FrameLayout {
         onClose();
     }
 
+    public void close(boolean withConfiguration) {
+        setVisibility(GONE);
+        onClose(withConfiguration);
+    }
+
     protected abstract void onShow();
     protected abstract void onClose();
+    protected abstract void onClose(boolean withConfiguration);
 
 }
