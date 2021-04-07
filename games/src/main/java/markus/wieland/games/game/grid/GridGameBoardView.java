@@ -6,13 +6,17 @@ import android.util.AttributeSet;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import markus.wieland.games.elements.Line;
 import markus.wieland.games.elements.Matrix;
 import markus.wieland.games.game.view.GameBoardView;
-import markus.wieland.games.persistence.GameState;
 
 public abstract class GridGameBoardView<F extends GridGameBoardFieldView> extends GameBoardView {
 
     protected Matrix<F> matrix;
+    protected List<Line> lines;
 
     public GridGameBoardView(@NonNull Context context) {
         this(context, null);
@@ -27,12 +31,14 @@ public abstract class GridGameBoardView<F extends GridGameBoardFieldView> extend
         load();
     }
 
-    protected void load(){
+    protected void load() {
         matrix = new Matrix<>(getSizeX(), getSizeY());
+        lines = new ArrayList<>();
         initializeLines();
     }
 
-    protected void initializeLines() {}
+    protected void initializeLines() {
+    }
 
     protected abstract int getSizeX();
 
