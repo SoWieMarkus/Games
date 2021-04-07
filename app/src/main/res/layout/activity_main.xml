@@ -6,24 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <markus.wieland.game.GameStartScreenView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/test"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <markus.wieland.game.GameStartScreenView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/test2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_background="@layout/game_start_screen_alyout"/>
 
     <TextView
         android:layout_width="wrap_content"

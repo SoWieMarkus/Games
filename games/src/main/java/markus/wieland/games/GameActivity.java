@@ -49,7 +49,7 @@ public abstract class GameActivity<C extends GameConfiguration, H extends Highsc
         if (startScreen != null)
             startScreen.setScreenInteractListener(this::load);
         if (endScreen != null) {
-            endScreen.setScreenInteractListener(this::restartGame);
+            endScreen.setScreenInteractListener(this::restartActivity);
             endScreen.setVisibility(View.GONE);
         }
 
@@ -80,9 +80,6 @@ public abstract class GameActivity<C extends GameConfiguration, H extends Highsc
         initializeGame(s);
     }
 
-    protected void restartGame() {
-        recreate();
-    }
 
     private void loadGameStateFromGameSaver() {
         S s = gameSaver.getGameState();
@@ -114,8 +111,8 @@ public abstract class GameActivity<C extends GameConfiguration, H extends Highsc
 
     protected abstract void initializeGame(S s);
 
-    protected <T> void restartActivity(boolean withConfiguration, Class<T> activity) {
-        Intent intent = new Intent(this, activity);
+    protected void restartActivity(boolean withConfiguration) {
+        Intent intent = new Intent(this, getClass());
         if (withConfiguration && generator != null && generator.getConfiguration() != null) {
             intent.putExtra(KEY_CONFIGURATION, generator.getConfiguration());
         }

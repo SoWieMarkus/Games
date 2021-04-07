@@ -76,4 +76,8 @@ public abstract class Screen {
     public void close() {
         setVisibility(View.GONE);
     }
+
+    public void close(boolean withConfiguration) {
+
+    }
 }

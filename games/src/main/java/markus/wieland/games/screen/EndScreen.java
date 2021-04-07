@@ -47,12 +47,12 @@ public abstract class EndScreen extends Screen {
     protected abstract void update();
 
     /**
-     * This method hides the screen. At the same time the {@link EndScreenInteractListener#onClose()} will be called.
+     * This method hides the screen. At the same time the {@link EndScreenInteractListener#onClose(boolean)} will be called.
      * In default implementation of the {@link GameActivity} the activity will be restarted.
      */
     @Override
-    public void close() {
+    public void close(boolean withConfiguration) {
         super.close();
-        ((EndScreenInteractListener) screenInteractListener).onClose();
+        ((EndScreenInteractListener) screenInteractListener).onClose(withConfiguration);
     }
 }
