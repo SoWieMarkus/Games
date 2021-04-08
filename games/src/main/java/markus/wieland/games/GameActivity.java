@@ -105,6 +105,16 @@ public abstract class GameActivity<C extends GameConfiguration, H extends Highsc
 
     }
 
+    @Override
+    public void onAbort(ConfirmDialog confirmDialog) {
+        if (confirmDialog != null) {
+            if (game != null) game.setRunning(false);
+            if (gameSaver != null) gameSaver.delete();
+            confirmDialog.setConfirmClickListener((dialog, which) -> restartActivity(false));
+            confirmDialog.getDialog(this).show();
+        }
+    }
+
     protected abstract GameGenerator<S> initializeGenerator(GameConfiguration configuration);
 
     protected abstract GameSaver<S, H> initializeGameSaver();
