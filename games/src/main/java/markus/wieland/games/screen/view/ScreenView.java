@@ -51,7 +51,8 @@ public abstract class ScreenView extends FrameLayout {
 
         LayoutInflater.from(context).inflate(layoutId, this, true);
 
-
+        setClickable(true);
+        
         animateEndAlpha = array.getFloat(R.styleable.ScreenView_entry_animation_alpha_end,1f);
         animateStartAlpha = array.getFloat(R.styleable.ScreenView_entry_animation_alpha_start,0f);
         animationDuration = array.getInteger(R.styleable.ScreenView_entry_animation_alpha_duration,500);
