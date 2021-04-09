@@ -7,7 +7,9 @@ import markus.wieland.games.player.Player;
 
 /**
  * A field inside the {@link GameBoard}
+ * @deprecated
  */
+@Deprecated
 public abstract class GameBoardField {
 
     /**

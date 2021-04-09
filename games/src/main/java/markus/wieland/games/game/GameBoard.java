@@ -22,6 +22,7 @@ import markus.wieland.games.elements.Matrix;
  * @param <E>
  * @param <S>
  */
+@Deprecated
 public abstract class GameBoard<C extends ViewGroup, E extends GameBoardField, S extends GameState> implements Iterable<E> {
 
     protected final markus.wieland.games.game.GameBoardInteractionListener<E> gameBoardInteractionListener;
