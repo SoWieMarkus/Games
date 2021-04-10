@@ -45,7 +45,7 @@ public abstract class GridGameAIMove extends AIMove {
         int size = line.size();
         int[] value = new int[size];
         for (int i = 0; i < line.size(); i++) {
-            value[i] = grid[line.getCoordinate(i).getY()][line.getCoordinate(i).getY()];
+            value[i] = grid[line.getCoordinate(i).getY()][line.getCoordinate(i).getX()];
         }
         return new PatternMatchingLine(value);
     }
