@@ -101,3 +101,11 @@ y
 Igames/src/main/java/markus/wieland/games/screen/view/StartScreenView.java,a\f\afcadb10ca079ec91509f6b10833b0a06bbe10b2
 w
 Ggames/src/main/java/markus/wieland/games/screen/view/EndScreenView.java,2\3\235641b4db7be88279775cea88a9af04cbf96e37
+{
+Kgames/src/main/java/markus/wieland/games/game/level/LevelGameBoardView.java,e\0\e09042b86798180d03ebd81098ee69d786c712ee
+v
+Fgames/src/main/java/markus/wieland/games/game/level/LevelFragment.java,a\2\a2d092145e4afc041ef90121c0b5ec1e4d2e4226
+r
+Bgames/src/main/java/markus/wieland/games/game/level/LevelGame.java,2\4\2437eb810658dfebddab44c3662a737c70e4e4e4
+n
+>games/src/main/java/markus/wieland/games/game/level/Level.java,1\4\14d49d9cb3785a17ce17b7943f6ca144799ec4c8

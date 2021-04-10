@@ -1,9 +1,14 @@
 package markus.wieland.game;
 
 import android.os.Bundle;
-import android.view.View;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import markus.wieland.games.GameActivity;
+import markus.wieland.games.ai.pattern.Pattern;
+import markus.wieland.games.ai.pattern.PatternMatcher;
 import markus.wieland.games.game.Game;
 import markus.wieland.games.game.GameConfiguration;
 import markus.wieland.games.game.GameResult;
@@ -27,6 +32,10 @@ public class MainActivity extends GameActivity<GameConfiguration, Highscore, Gam
         setContentView(R.layout.activity_main);
 
         findViewById(R.id.button2).setOnClickListener(view -> restartActivity(true));
+
+        //PatternMatcher.getInstance().initialize(4, new ArrayList<>());
+        //HashMap<Integer, List<Pattern>> patterns = (HashMap<Integer, List<Pattern>>)PatternMatcher.getInstance().getPatterns();
+        //patterns.get(0);
     }
 
     @Override
