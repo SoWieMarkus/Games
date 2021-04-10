@@ -1,6 +1,7 @@
 package markus.wieland.games.ai;
 
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.List;
 
 import markus.wieland.games.game.Difficulty;
@@ -26,6 +27,7 @@ public abstract class AI implements Serializable {
 
     public AIMove calculateMove(GameState gameState) {
         List<AIMove> moves = getPossibleMoves(gameState);
+        Collections.shuffle(moves);
         return aiMoveRater.getBestMove(moves, difficulty);
     }
 
