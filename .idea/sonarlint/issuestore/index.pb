@@ -109,3 +109,11 @@ r
 Bgames/src/main/java/markus/wieland/games/game/level/LevelGame.java,2\4\2437eb810658dfebddab44c3662a737c70e4e4e4
 n
 >games/src/main/java/markus/wieland/games/game/level/Level.java,1\4\14d49d9cb3785a17ce17b7943f6ca144799ec4c8
+n
+>app/src/main/java/markus/wieland/game/GameStartScreenView.java,4\b\4bb04c1088bb36cf67ed00b55d941b49f30133f6
+|
+Lgames/src/main/java/markus/wieland/games/ai/pattern/PatternMatchingLine.java,e\d\edd110566da25cbe6e00359a31c9475868f004c9
+p
+@games/src/main/java/markus/wieland/games/ai/pattern/Pattern.java,3\3\338fa1ce7c8e829cb8a59fe81a2f7f401e162730
+w
+Ggames/src/main/java/markus/wieland/games/ai/pattern/PatternMatcher.java,b\3\b37425c9f4c07e2b8b890c25f8a11df7de71fdf6
