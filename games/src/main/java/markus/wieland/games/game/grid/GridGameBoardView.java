@@ -19,8 +19,6 @@ public abstract class GridGameBoardView<F extends GridGameBoardFieldView> extend
     protected Matrix<F> matrix;
     protected List<Line> lines;
 
-    public abstract GameState getGameState();
-
     public List<Line> getLines() {
         return lines;
     }
