@@ -49,6 +49,14 @@ public class PatternMatcher {
         }
     }
 
+    public void append(int amountOfBits, PatternType value) {
+        for (Map.Entry<Integer, List<Pattern>> entry : patterns.entrySet()) {
+            for (Pattern pattern : entry.getValue()) {
+                pattern.append(value, amountOfBits);
+            }
+        }
+    }
+
     public int getAmountOfBits() {
         return amountOfBits;
     }
@@ -74,12 +82,14 @@ public class PatternMatcher {
 
     private boolean checkMatch(Pattern pattern, PatternMatchingLine line, int valueOfBlockedFields) {
         int[] values = line.getValues();
-        List<Boolean> patternOfBlockedFields = pattern.getPatternToCheck();
+        List<PatternType> patternOfBlockedFields = pattern.getPatternToCheck();
         for (int i = 0; i < values.length; i++) {
-            boolean patternIsBlocked = patternOfBlockedFields.get(i);
+            PatternType patternField = patternOfBlockedFields.get(i);
             int value = values[i];
-            if ((patternIsBlocked && value != valueOfBlockedFields)
-                    || (!patternIsBlocked && value != emptyValue)) {
+
+            if ((patternField == PatternType.BLOCKED_BY_VALUE && value != valueOfBlockedFields) ||
+                    (patternField == PatternType.BLOCKED && value == emptyValue) ||
+                    (patternField == PatternType.FREE && value != emptyValue)){
                 return false;
             }
         }
