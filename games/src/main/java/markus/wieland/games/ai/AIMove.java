@@ -21,6 +21,8 @@ public abstract class AIMove implements Serializable {
 
     public abstract boolean isLegal();
 
+    public abstract void executeMove();
+
     protected long rate(){
         switch (difficulty){
             case MEDIUM:

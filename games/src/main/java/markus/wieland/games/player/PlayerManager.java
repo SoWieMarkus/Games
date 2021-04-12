@@ -112,6 +112,13 @@ public class PlayerManager implements Iterable<Player>, Serializable {
         return getCurrentPlayer();
     }
 
+    public Player getPlayer(int value){
+        for (Player player : this) {
+            if (player.getValue() == value) return player;
+        }
+        return null;
+    }
+
     /**
      * Get the amount registered players
      *

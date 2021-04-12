@@ -25,4 +25,5 @@ public abstract class MultiPlayerGame<S extends GameState, R extends GameResult>
     }
 
     protected abstract void performAIMove(AIMove aiMove);
+
 }
