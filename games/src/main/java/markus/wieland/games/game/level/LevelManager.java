@@ -32,4 +32,8 @@ public class LevelManager<L extends Level> {
         return currentLevelIndex;
     }
 
+    public List<L> getLevels() {
+        return levels;
+    }
+
 }

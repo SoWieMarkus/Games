@@ -1,7 +1,5 @@
 
-W
-java:S1133"5Do not forget to remove this deprecated code someday.(²·úÇøÿÿÿÿ8§™Ï¹Š/
-I
-java:S1123"'Add the missing @Deprecated annotation.(²·úÇøÿÿÿÿ8§™Ï¹Š/
 u
 java:S1128"XRemove this unused import 'markus.wieland.games.game.view.GameBoardInteractionListener'.(ÃÆ¶8æÚº»Š/
+W
+java:S1133"5Do not forget to remove this deprecated code someday.(²·úÇøÿÿÿÿ8§™Ï¹Š/

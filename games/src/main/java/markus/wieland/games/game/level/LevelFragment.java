@@ -1,6 +1,5 @@
 package markus.wieland.games.game.level;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;

@@ -12,7 +12,6 @@ import java.util.List;
 import markus.wieland.games.elements.Line;
 import markus.wieland.games.elements.Matrix;
 import markus.wieland.games.game.view.GameBoardView;
-import markus.wieland.games.persistence.GameState;
 
 public abstract class GridGameBoardView<F extends GridGameBoardFieldView> extends GameBoardView {
 
