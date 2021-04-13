@@ -35,3 +35,5 @@ Bgames/src/main/java/markus/wieland/games/game/level/LevelGame.java,2\4\2437eb8
 Kgames/src/main/java/markus/wieland/games/game/level/LevelGameBoardView.java,e\0\e09042b86798180d03ebd81098ee69d786c712ee
 u
 Egames/src/main/java/markus/wieland/games/game/level/LevelManager.java,b\9\b997d864b43f370b41e59e46c9301de92d899229
+v
+Fgames/src/main/java/markus/wieland/games/game/level/LevelFragment.java,a\2\a2d092145e4afc041ef90121c0b5ec1e4d2e4226

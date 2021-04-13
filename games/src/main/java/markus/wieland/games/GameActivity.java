@@ -20,7 +20,7 @@ import markus.wieland.games.screen.view.StartScreenView;
 
 public abstract class GameActivity<C extends GameConfiguration, H extends Highscore, S extends GameState, GR extends GameResult, G extends Game<S, GR>> extends AppCompatActivity implements GameEventListener<GR> {
 
-    protected static final String KEY_CONFIGURATION = "markus.wieland.games.CONFIGURATION";
+    public static final String KEY_CONFIGURATION = "markus.wieland.games.CONFIGURATION";
 
     protected GameSaver<S, H> gameSaver;
     protected GameGenerator<S> generator;
